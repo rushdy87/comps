@@ -1,0 +1,14 @@
+DOM Events describes 3 phases of event propagation:
+  1. Capturing phase – the event goes down to the element.
+  2. Target phase – the event reached the target element.
+  3. Bubbling phase – the event bubbles up from the element.
+
+- Event bubbling and capturing are two ways of event propagation in the HTML DOM API, 
+  when an event occurs in an element inside another element, and both elements have 
+  registered a handle for that event. The event propagation mode determines in which 
+  order the elements receive the event.
+- With bubbling, the event is first captured and handled by the innermost element and 
+  then propagated to outer elements.
+  With capturing, the event is first captured by the outermost element and propagated 
+  to the inner elements.
+- for more informations see: https://javascript.info/bubbling-and-capturing

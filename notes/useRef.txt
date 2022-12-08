@@ -1,0 +1,19 @@
+Refs in React
+  - Refs are a function provided by React to access the DOM element and the React element that you 
+    might have created on your own. They are used in cases where we want to change the value of a 
+    child component, without making use of props and all. They also provide us with good functionality 
+    as we can use callbacks with them. 
+
+React JS useRef Hook
+  - The useRef is a hook that allows to directly create a reference to the DOM element in the functional 
+    component.
+  - Syntax:
+      const refContainer = useRef(initialValue);
+  - The useRef returns a mutable ref object. This object has a property called .current. The value is 
+    persisted in the refContainer.current property. These values are accessed from the current property 
+    of the returned object. The .current property could be initialised to the passed argument initialValue 
+    e.g. useRef(initialValue). The object can persist a value for a full lifetime of the component. 
+  - useRef Implementation:
+      1. create a ref at the top of your component by calling 'useRef'.
+      2. Assign the ref to jsx element as a prop called 'ref'.
+      3. access the DOM with ref.current
