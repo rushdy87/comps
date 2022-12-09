@@ -1,0 +1,12 @@
+- When the browser loads a new HTML document, all existing js variables and code dumped. (this is 
+  a standerd browser behavior).
+
+How navigation work with react
+  1- User types our address in:
+    * Always send back the index.html file.
+    * when app loads up, look at address bar and use it to decide what content to show.
+  2- User click a link or presses 'back' button:
+    * Stop browser's default page-switching behavior.
+    * Figer out where the user was trying to go.
+    * Update content on the screen to trick the user into thinking they swapped pages.
+    * Update address bar to trick the user into thinking they swapped pages.
