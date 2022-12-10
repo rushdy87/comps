@@ -1,0 +1,13 @@
+You have to control how elements behave and are positioned on the page.
+To do the above, and much more, you'll use CSS's position property.
+This property takes in five values: static, relative, absolute, fixed, and sticky.
+By default, the position property for all HTML elements in CSS is set to static.
+Visually, all elements follow the order of the HTML code, and in that way the typical document flow is created.
+position: relative works the same way as position: static;, but it lets you change an element's position.
+To modify the position, you'll need to apply the top, bottom, right, and left properties mentioned earlier and in that way specify where and how much you want to move the element.
+Absolute-positioned elements are completely taken out of the regular flow of the web page.
+They are not positioned based on their usual place in the document flow, but based on the position of their ancestor.
+#################
+Use absolute to position an element outside of the normal flow of the document, causing neighboring elements to act as if the element doesn’t exist.
+
+Any offsets are calculated relative to the nearest parent that has a position other than static, and the element will act as a position reference for other absolutely positioned children.

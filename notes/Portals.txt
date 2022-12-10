@@ -1,0 +1,33 @@
+Portals
+- see https://reactjs.org/docs/portals.html
+- Portals provide a first-class way to render children into a DOM node that exists 
+  outside the DOM hierarchy of the parent component.
+      ReactDOM.createPortal(child, container)
+  * The first argument (child) is any renderable React child, such as an element, string, or fragment.
+  * The second argument (container) is a DOM element.
+- Normally, when you return an element from a component’s render method, it’s mounted into the DOM as 
+  a child of the nearest parent node.
+  However, sometimes it’s useful to insert a child into a different location in the DOM.
+  A typical use case for portals is when a parent component has an overflow: hidden or z-index style, 
+  but you need the child to visually “break out” of its container. For example, dialogs, hovercards, 
+  and tooltips.
+- Note:
+        When working with portals, remember that managing keyboard focus becomes very important.
+
+What we do with Modal?
+1- in the index.html (in public directory) we make a div with class of "modal-container":
+          <div class="modal-container"></div>
+2- in The Modal.js file (in src/components/modal) the code be:
+import ReactDOM from 'react-dom';
+
+const Modal = () => {
+  return ReactDOM.createPortal(
+    <div>
+      <div className="absolute inset-0 bg-gray-300 opacity-80"></div>
+      <div className="absolute inset-40 p-10 bg-white">I am a Modal!</div>
+    </div>,
+    document.querySelector('modal-container')
+  );
+};
+
+export default Modal;
