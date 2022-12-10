@@ -4,6 +4,7 @@ import AccordionPage from './pages/accordion-page/AccordionPage';
 import DropdownPage from './pages/dropdown-page/DropdownPage';
 import ButtonPage from './pages/button-page/ButtonPage';
 import ModalPage from './pages/modal-page/ModalPage';
+import TablePage from './pages/table-page/TablePage';
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
         </Route>
         <Route path="/modal">
           <ModalPage />
+        </Route>
+        <Route path="/table">
+          <TablePage />
         </Route>
       </div>
     </div>
