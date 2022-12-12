@@ -1,0 +1,4 @@
+Custom Hooks:
+  - Functions that contain some reusable logic.
+  - usually reuse built-in hooks (useState, usEffect, useRef, ...).
+  - usually easiest to extract logic into hooks, rather than making a hook first.
