@@ -1,11 +1,11 @@
-import Table from '../../components/table/Table';
+import SortableTable from '../../components/sortable-table/SortableTable';
 
 const TablePage = () => {
   const keyFn = (hero) => hero.name;
 
   return (
     <div>
-      <Table data={HEROES_DATA} config={CONFIG} keyFn={keyFn} />
+      <SortableTable data={HEROES_DATA} config={CONFIG} keyFn={keyFn} />
     </div>
   );
 };
@@ -21,11 +21,27 @@ const HEROES_DATA = [
 ];
 
 const CONFIG = [
-  { label: 'Name', render: (hero) => hero.name },
+  {
+    label: 'Name',
+    render: (hero) => hero.name,
+    sortValue: (hero) => hero.name,
+  },
   {
     label: 'Color',
     render: (hero) => <div className={`p-3 m-2 ${hero.color}`} />,
   },
-  { label: 'Score', render: (hero) => hero.score },
-  { label: 'Sample', render: (hero) => hero.name[0] },
+  {
+    label: 'Score',
+    render: (hero) => hero.score,
+    sortValue: (hero) => hero.score,
+  },
+  {
+    label: 'Sample',
+    render: (hero) => (
+      <p className={`text-white p-2 text-center opacity-50 ${hero.color}`}>
+        {hero.name[0]}
+        {hero.score}
+      </p>
+    ),
+  },
 ];
