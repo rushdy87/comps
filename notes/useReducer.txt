@@ -1,0 +1,31 @@
+useReducer in action
+  - alternative to useState.
+  - Produces state.
+  - Changing this state makes component rerender.
+  - Useful when you have several different closely-related pieces of state.
+  - Useful when future state value depend on the current state.
+
+          const [state, dispatch] = useReducer(reducer, {intalvalue})
+    * state: state variable.
+    * dispatch: function to change state.
+    * intalvalue: intal value of this state.
+    * reducer: function -> const reducer = (state, action) => {};
+
+  - to change state, you call dispatch.
+  - when you call dispatch, react will find reducer function and run it.
+  - when reducer excuted by react, the first argument, is the current state of the component.
+  - the second argument -action. the value of action is what we pass by dispatch.
+  - whatever gets returned from reducer function, will be a new state.
+
+Rulles around reducer function:
+  - whatever you return will be your new state.
+  - if you return nothing, then your state will be undefined.
+  - No async/await, No requests, No promises, No outside variables.
+  - Like almost everywhare in else react, DON'T direectly change state object. 
+
+Understanding Action Objects:
+  - when need modify state, call dispatch and pass in an action object.
+  - action object always hav a 'type' property, it is string, and tell the reducer function what part of state
+    need update.
+  - if we need communiate some data to the reducer, it will be placed in 'payload' property.
+  - This is very common community convention, not requirements.
