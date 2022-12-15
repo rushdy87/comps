@@ -1,0 +1,28 @@
+Immer
+  - A tiny package that allows you to work with immutable state in a more convenient way.
+  - Let you write code to be direectly mutate state.
+
+Immer in action:
+  - import produce from 'immer'.
+  - wrap reducer with produce, in useReducer:
+      const [state, dispatch] = useReducer(produce(reducer), {inisatl state});
+  - rewrite every case statement in reducer function:
+      const reducer = (state, action) => {
+      switch (action.type) {
+        case INCREMENT_COUNT:
+          state.count = state.count + 1;
+          return;
+        case DECREMENT_COUNT:
+          state.count = state.count - 1;
+          return;
+        case SET_VALUE_TO_ADD:
+          state.valueToAdd = action.payload;
+          return;
+        case ADD_VALUE_TO_COUNT:
+          state.count = state.count + state.valueToAdd;
+          state.valueToAdd = 0;
+          return;
+        default:
+          return;
+      }
+    };
